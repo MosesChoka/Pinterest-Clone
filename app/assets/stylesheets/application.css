@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+ .jumbotron {
+    margin: 20px 0;
+    text-align: center;
+    background-color: gray;
+  }
+
+  a:link {
+    text-decoration: none;
+  }
+
+  .nav-item:hover{
+    color: black;
+  }
