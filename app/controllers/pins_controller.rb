@@ -26,10 +26,10 @@ class PinsController < ApplicationController
     respond_to do |format|
       if @pin.save
         format.html { redirect_to pin_url(@pin), notice: "Pin was successfully created." }
-        format.json { render :show, status: :created, location: @pin }
+        #format.json { render :show, status: :created, location: @pin }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @pin.errors, status: :unprocessable_entity }
+        #format.json { render json: @pin.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -39,10 +39,10 @@ class PinsController < ApplicationController
     respond_to do |format|
       if @pin.update(pin_params)
         format.html { redirect_to pin_url(@pin), notice: "Pin was successfully updated." }
-        format.json { render :show, status: :ok, location: @pin }
+        #format.json { render :show, status: :ok, location: @pin }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @pin.errors, status: :unprocessable_entity }
+        #format.json { render json: @pin.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -53,7 +53,7 @@ class PinsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to pins_url, notice: "Pin was successfully destroyed." }
-      format.json { head :no_content }
+      #format.json { head :no_content }
     end
   end
 
