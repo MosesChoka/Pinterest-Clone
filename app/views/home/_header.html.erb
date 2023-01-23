@@ -16,20 +16,18 @@
         <li class="nav-item">
           <%= link_to 'Contact Us', home_contact_path, class: 'nav-link'%>
         </li>
-
         <li>
           <%= link_to "List Pins", pins_path , class:"nav-link"%>
         </li>
+        <% if user_signed_in? %>
+          <li><%= link_to 'Edit Profie', edit_user_registration_path %></li>
+          <li><%= link_to 'Add Pin', new_pin_path%></li>
+          <li><%= link_to 'Logout', destroy_user_session_path , method: :delete%></li>
+        <% else  %>
+          <li><%= link_to 'Sign Up',user_registration_path %></li>
+          <li><%= link_to 'Login', new_user_session_path %></li>
+        <% end %>
       </ul>
-
-     <% if user_signed_in? %>
-      <li><%= link_to 'Edit Profie', edit_user_registration_path %></li>
-      <li><%= link_to 'Add Pin', new_pin_path%></li>
-      <li><%= link_to 'Logout', destroy_user_session_path , method: :delete%></li>
-     <% else %>
-      <li><%= link_to 'Sign Up',user_registration_path %></li>
-      <li><%= link_to 'Login', new_user_session_path %></li>
-     <% end %>
     </div>
   </div>
 </nav>
