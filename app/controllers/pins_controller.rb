@@ -22,7 +22,7 @@ class PinsController < ApplicationController
   # POST /pins or /pins.json
   def create
     @pin = Pin.new(pin_params)
-    respond_with Post.create(post_params.merge(user_id: current_user.id))
+   
 
     respond_to do |format|
       if @pin.save
