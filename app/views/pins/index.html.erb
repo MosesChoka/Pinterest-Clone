@@ -8,6 +8,11 @@
     <p>
       <%= link_to "Show this pin", pin %>
     </p>
+    <% if pin.user == current_user  %>
+      <p><%= link_to 'Edit', edit_pin_path(pin)%></p>
+      <p><%= link_to 'Delete Pin', pin, method: :delete, data: {confirm: 'Are you sure?'} %></p>
+    <% end %>
+  
   <% end %>
 </div>
 
