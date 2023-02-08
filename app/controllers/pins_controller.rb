@@ -1,14 +1,10 @@
 class PinsController < ApplicationController
-<<<<<<< HEAD
   before_action :set_pin, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :correct_user, only: [:edit, :update, :destroy]
-=======
   before_action :set_pin, only:[:show,:edit,:update,:destroy]
   before_action:authenticate_user!, except:[:index,:show]
   before_action:correct_user, only:[:edit,:update,:destroy]
-
->>>>>>> scaffold-custom
   # GET /pins or /pins.json
   def index
     @pins = Pin.all
@@ -30,11 +26,8 @@ class PinsController < ApplicationController
   # POST /pins or /pins.json
   def create
     @pin = current_user.pins.build(pin_params)
-<<<<<<< HEAD
-   
-=======
->>>>>>> scaffold-custom
-
+  end
+  def save
     respond_to do |format|
       if @pin.save
         format.html { redirect_to pin_url(@pin), notice: "Pin was successfully created." }
@@ -80,16 +73,9 @@ class PinsController < ApplicationController
       params.require(:pin).permit(:description)
     end
 
-<<<<<<< HEAD
   def correct_user
     @pin = current_user.pins.find_by(id: params[:id])
     redirect_to pins_path, notice: "Not authorized to edit this pin" if @pin.nil?
   end
 end
-=======
-    def correct_user
-      @pin=current_user.pins.find_by(id: params[:id])
-      redirect_to pins_path, notice: "Not authorized to edit this pin" if @pin.nil?
-    end
-end
->>>>>>> scaffold-custom
+

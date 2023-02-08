@@ -9,11 +9,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-<<<<<<< HEAD
-  
-=======
-  devise_scope : users do
-    get '/users/sign_up' ==> 'devise/registrations#new'
-  end
->>>>>>> scaffold-custom
+ 
 end
